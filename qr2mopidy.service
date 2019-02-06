@@ -1,0 +1,11 @@
+[Unit]
+Description=QR2Mopidy program
+
+[Service]
+# Adjust this line to the correct path on your system
+ExecStart=/usr/bin/python /home/pi/qr2mopidy.py
+
+Type=notify
+WatchdogSec=30
+Restart=on-failure
+RestartSec=10

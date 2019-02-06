@@ -1,0 +1,4 @@
+124c124
+<         connection.putheader("Content-Type", "application/json-rpc")
+---
+>         connection.putheader("Content-Type", "application/json")

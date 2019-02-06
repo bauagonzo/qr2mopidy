@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mopidy:
+    image: mopidy-arm
+    restart: unless-stopped
+    user: root
+    ports:
+      - "6600:6600"
+      - "6680:6680"
+    devices:
+      - "/dev/snd:/dev/snd"
+  qr2modipy:
+    image: qr2modipy
+    restart: unless-stopped
+    devices:
+      - "/dev/video0:/dev/video0"
+    environment:
+      QT_X11_NO_MITSHM: 1
+      MOPIDY_SERVER: mopidy:6680
+      LOG_LEVEL: INFO
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"

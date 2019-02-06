@@ -1,0 +1,4 @@
+jsonrpclib
+zbar
+opencv-python
+Pillow
